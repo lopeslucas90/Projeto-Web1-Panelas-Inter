@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nova Receita - panelinhas.com</title>
+</head>
+<body>
+    <header class="cabecalho">
+            <div id="caixa-busca">
+                <input type="text" id="busca-texto" placeholder="pesquisar receita...">
+                <img src="icone-busca.png" id="botao-busca" alt="icone-busca">
+            </div>
+            <nav>
+                <li class="logo-site"><img src="logo_Panelas.png" alt="Logo Panelinhas" width="300" height="200"></li>
+                <li><a href="#">Receitas...</a></li>
+            </nav>
+            
+        </header>
+    <hr id="listra_cabecalho">
+    <main>
+        <form>
+            <fieldset>
+                <legend>Principal</legend>
+                <label for="nome_nreceita">Nome da Receita:</label>
+                <input type="text" id="nome_nreceita" name="nome_nreceita" required><br>
+
+                <label for="descricao_nreceita">Descricao</label>
+                <textarea id="descricao_nreceita" name="descricao_nreceita" rows="4" cols="10" maxlength="150" required></textarea><br>
+
+                <label for="foto_nreceita">Envie uma foto:</label>
+                <input type="file" id="foto_nreceita" name="foto_nreceita" required><br>
+
+                <label for="video_nreceita">Envie um video:</label>
+                <input type="file" id="video_nreceita" name="video_nreceita"><br>
+
+                <label for="audio_nreceita">Envie uma audio:</label>
+                <input type="file" id="audio_nreceita" name="audio_nreceita"><br>
+            </fieldset>
+            <fieldset>
+                <legend>Detalhes</legend>
+                <label for="tempo_nreceita">Tempo de preparo</label>
+                <input type="time" id="tempo_nreceita" name="tempo_nreceita"><br>
+                
+                <label for="rendimento_nreceita">Rendimento</label>
+                <input type="number" id="rendimento_nreceita" name="rendimento_nreceita" min="1" max="99" required>
+
+                <label for="rendimento_tipo_nreceita">Tipo do Rendimento</label>
+                <input type="text" id="rendimento_tipo_nreceita" name="rendimento_tipo_nreceita" required><br>
+                
+                <label>Dificuldade:</label>
+                <input type="radio" id="facil" name="dificuldade_nreceita" value="facil" checked>
+                <label for="facil">Facil</label>
+                <input type="radio" id="medio" name="dificuldade_nreceita" value="medio">
+                <label for="medio">Médio</label>
+                <input type="radio" id="dificil" name="dificuldade_nreceita" value="dificil">
+                <label for="dificil">Dificil</label><br>
+            </fieldset>
+            <fieldset> <!-- MUDAR COM JS FUTURAMENTE-->
+                <legend>Preparo</legend>
+                <label for="ingredientes_nreceita">Ingredientes:</label>
+                <textarea id="ingredientes_nreceita" name="ingredientes_nreceita" rows="8" cols="15" maxlength="300" required></textarea><br>
+
+                <label for="passos_nreceita">Passo a Passo:</label>
+                <textarea id="passos_nreceita" name="passos_nreceita" rows="8" cols="15" maxlength="300" required></textarea><br>
+            </fieldset>
+            <input type="submit" vaule="Enviar receita" onclick="alert('Obrigado! Em breve, analisaremos e postaremos a sua receita!.')">
+        </form>
+    </main>
+    <footer>
+        <p>Desenvolvido por...</p>
+
+        <aside>
+            <p>Siga as nosssas redes sociais</p>
+            <nav>
+                <a href=""><img src="facebook-icone.png" alt="facebook" width="50"></a>
+                <a href=""><img src="instagram-icone.webp" alt="instagram-icone" width="50"></a>
+            </nac>
+        </aside>
+    </footer>
+</body>
+</html>

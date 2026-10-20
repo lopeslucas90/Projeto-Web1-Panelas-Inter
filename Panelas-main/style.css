@@ -1,0 +1,409 @@
+/* Inclui bordas e preenchimentos no cálculo da largura e altura dos elementos. */
+* {
+    box-sizing: border-box;
+}
+
+/* Mudei as cores de preto e branco com relação ao que mandei lá no grupo, pois achei muito forte*/
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+    background-color: #FFFDF9;
+    font-family: cursive;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* Limita a largura do conteúdo principal e o centraliza; flex: 1 ajuda a empurrar o rodapé para baixo. */
+main {
+    width: min(1100px, calc(100% - 32px));
+    margin: 28px auto;
+    flex: 1;
+}
+
+/* Cabeçalho e navegação */
+.cabecalho {
+    background-color: #F79326;
+    color: #FFFFFF;
+    padding: 12px clamp(16px, 4vw, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*caixa em que está a barra de busca*/
+#caixa-busca {
+    display: flex;
+    align-items: center;
+    width: min(300px, 100%);
+    margin: 0;
+    padding: 4px 10px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    justify-content: center;
+}
+
+#busca-texto {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 32px;
+    padding: 4px 4px;
+    color: #333333;
+    background-color: #FFFDF9;
+    font-family: inherit;
+    font-size: 13px;
+    font-style: italic;
+    border: 0;
+    outline: none;
+}
+
+#botao-busca {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+#listra_cabecalho{
+    background-color: #F1473A;
+    border: none;
+    height: 10px;
+    margin: 0;
+    width: 100%;
+    opacity: 1;
+}
+
+.cabecalho nav li {
+    list-style: none;
+}
+
+.logo-site img {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.cabecalho nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/*Coloquei pra mudar a cor sempre que passar por aquele botão "Receitas"*/
+.cabecalho nav a:hover,
+.cabecalho nav a:focus-visible {
+    color: #FFF533;
+}
+
+/*Coisas dos Main*/
+/* Uniformiza a altura das linhas e remove a margem superior padrão dos títulos. */
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    margin-top: 0;
+}
+
+/* Tamanho responsivo do título principal: varia conforme a tela, entre mínimo e máximo. */
+h1 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+/* Tamanho responsivo dos títulos de segundo nível. */
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Tamanho responsivo dos títulos de terceiro nível. */
+h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+}
+
+/*Coloquei essa classe no header do main da Home pra ficar mais fácil de saber o que é*/
+.cabecalho_receitas {
+    padding: 22px 12px;
+}
+
+.cabecalho_receitas h1,
+.cabecalho_receitas h2,
+.cabecalho_receitas h3 {
+    margin-bottom: 16px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 24px 0;
+}
+
+#organizador_receitas div,
+.receitas {
+    min-width: 0;
+}
+
+.salgados,
+.doces,
+.bebidas {
+    padding: 18px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D8C9;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(70, 45, 20, 0.08);
+}
+
+.bebidas {
+    grid-column: 1 / -1;
+}
+
+.destaque,
+.salgados_receitas,
+.doces_receitas,
+.bebidas_receitas {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+    padding: 0;
+}
+
+.receitas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 150px;
+    max-width: 240px;
+    padding: 12px;
+    list-style: none;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D8C9;
+    border-radius: 8px;
+}
+
+.receitas img{
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: #F5EEE6;
+}
+
+a {
+    color: #9A4B08;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #E77E12;
+}
+
+/* Formulários*/
+form {
+    text-align: left;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 20px;
+    padding: 20px;
+    border: 1px solid #E5D8C9;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+legend {
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    margin: 8px 6px 5px 0;
+}
+
+/* Aplica o mesmo visual aos campos comuns, áreas de texto e listas de seleção, sem alterar rádios, caixas, envio e upload. */
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="file"]),
+textarea,
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 11px;
+    color: #333333;
+    font: inherit;
+    background-color: #FFFFFF;
+    border: 1px solid #CFC5BA;
+    border-radius: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #E77E12;
+}
+
+input[type="file"] {
+    display: block;
+    max-width: 100%;
+    margin: 8px 0 14px;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid rgba(247, 147, 38, 0.28);
+    outline-offset: 1px;
+    border-color: #F79326;
+}
+
+input[type="submit"],
+button {
+    padding: 9px 18px;
+    color: #FFFFFF;
+    font: inherit;
+    background-color: #F79326;
+    border: 1px solid #F79326;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #E77E12;
+    border-color: #E77E12;
+}
+
+.login {
+    width: min(360px, calc(100% - 32px));
+    margin: 30px auto;
+    padding: 26px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D8C9;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(70, 45, 20, 0.08);
+}
+
+.login form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.login form label {
+    margin-bottom: 0;
+}
+
+.login hr {
+    margin: 22px 0;
+}
+
+/* Página de receita */
+.pag_receitas {
+    max-width: 900px;
+    padding: 24px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D8C9;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(70, 45, 20, 0.08);
+}
+
+.pag_receitas header {
+    text-align: center;
+}
+
+.pag_receitas header > img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.destaques {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.destaques img {
+    object-fit: contain;
+}
+
+.pag_receitas article {
+    display: block;
+    margin-top: 20px;
+}
+
+.pag_receitas article p {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.pag_receitas li {
+    margin-bottom: 8px;
+}
+
+/* Rodapé*/
+footer {
+    margin-top: auto;
+    padding: 18px 20px;
+    color: #FFFFFF;
+    background-color: #F79326;
+}
+
+footer p {
+    margin: 6px 0 12px;
+}
+
+footer aside nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+footer aside nav img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+footer nav a .fa {
+    padding: 0 5px;
+    color: #FFFFFF;
+    font-size: 36px;
+}
+
+footer aside nav a:hover {
+    opacity: 0.8;
+}
+
