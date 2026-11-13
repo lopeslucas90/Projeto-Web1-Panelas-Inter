@@ -22,7 +22,7 @@
     <hr id="listra_cabecalho">
     <main class="cadastro">
         <h2>Cadastro</h2>
-        <form action="perfil.html" method="get">
+        <form id="form-cadastro" action="perfil.html" method="get">
             <fieldset> 
                 <label for="nome_cadastro">Nome</label>
                 <input type="text" id="nome_cadastro" name="nome_cadastro" required><br>
@@ -56,10 +56,10 @@
                 <label for="senha_cadastro">Senha:</label>
                 <input type="password" id="senha_cadastro" name="senha_cadastro" required><br>
         
-                <label for="senha_cadastro">Confirme sua senha:</label>
-                <input type="password" id="senhaConf_cadastro" name="senhaConf_cadastro" required><br>  
+                <label for="senhaConf_cadastro">Confirme sua senha:</label>
+                <input type="password" id="senhaConf_cadastro" name="senhaConf_cadastro" required><br><br>
                 
-                <input type="submit" vaule="cadastro" onclick="alert('Cadastro realizado')">
+                <input type="submit" value="Cadastrar">
             </fieldset>
         </form>
     </main>
@@ -71,8 +71,9 @@
             <nav>
                 <a href=""><img src="facebook-icone.png" alt="facebook" width="50"></a>
                 <a href=""><img src="instagram-icone.webp" alt="instagram-icone" width="50"></a>
-            </nac>
+            </nav>
         </aside>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
