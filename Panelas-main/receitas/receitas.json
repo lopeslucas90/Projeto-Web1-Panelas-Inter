@@ -1,0 +1,380 @@
+[
+  {
+    "id": "bolinho-de-chuva",
+    "nome": "Bolinho de Chuva",
+    "tipo": "Doce",
+    "descricao": "Confira essa deliciosa receita de Bolinho de Chuva...",
+    "tempopreparo": "40 minutos",
+    "rendimento": "30 unidades",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/bolinho_de_chuva.jpg",
+    "ingredientes": [
+      "3 xícaras de farinha de trigo",
+      "2 colheres (sopa) de açúcar",
+      "1 colher (sopa) de fermento em pó",
+      "1 pitada de sal",
+      "1 ovo",
+      "1 xícara de leite",
+      "Óleo para fritar",
+      "Açúcar e canela para polvilhar"
+    ],
+    "preparo": [
+      "Em uma tigela grande, junte a farinha, o açúcar, o fermento e o sal.",
+      "Adicione o ovo e o leite, misturando bem até obter uma massa homogênea e levemente cremosa.",
+      "Aqueça o óleo em uma panela funda.",
+      "Com a ajuda de uma colher, pegue porções da massa e coloque cuidadosamente no óleo quente.",
+      "Frite até dourar de todos os lados, retire com uma escumadeira e escorra em papel toalha.",
+      "Passe os bolinhos na mistura de açúcar com canela ainda quentes e sirva."
+    ]
+  },
+  {
+    "id": "bolo-de-cenoura",
+    "nome": "Bolo de Cenoura",
+    "tipo": "Doce",
+    "descricao": "Confira essa clássica receita de bolo de cenoura simples e fácil, nossa campeã de acessos! O bolo de cenoura é um doce muito popular em nosso país, especialmente no café da manhã e no lanche da tarde. Com sua cobertura de chocolate irresistível e seu interior macio e úmido, ela é uma receita que conquista o coração de todos! Veja com a gente como fazer bolo de cenoura, uma receita prática, preparada com auxílio do liquidificador e perfeita para degustar com um cafezinho!",
+    "tempopreparo": "40 min",
+    "rendimento": "8 porções",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/bolo_de_cenoura.jpg",
+    "video": "https://www.youtube.com/embed/mRij59AYQP0",
+    "ingredientes": [
+      "Massa:",
+      "1/2 xícara (chá) de óleo",
+      "3 cenouras médias raladas",
+      "4 ovos",
+      "2 xícaras (chá) de açúcar",
+      "2 e 1/2 xícaras (chá) de farinha de trigo",
+      "1 colher (sopa) de fermento em pó",
+      "Cobertura:",
+      "1 colher (sopa) de manteiga",
+      "3 colheres (sopa) de chocolate em pó",
+      "1 xícara (chá) de açúcar",
+      "1 xícara (chá) de leite"
+    ],
+    "preparo": [
+      "Massa:",
+      "Em um liquidificador, adicione a cenoura, os ovos e o óleo, depois misture.",
+      "Acrescente o açúcar e bata novamente por 5 minutos.",
+      "Em uma tigela ou na batedeira, adicione a farinha de trigo e depois misture novamente.",
+      "Acrescente o fermento e misture lentamente com uma colher.",
+      "Asse em um forno preaquecido a 180° C por aproximadamente 40 minutos.",
+      "Cobertura:",
+      "Despeje em uma tigela a manteiga, o chocolate em pó, o açúcar e o leite, depois misture.",
+      "Leve a mistura ao fogo e continue misturando até obter uma consistência cremosa, depois despeje a calda por cima do bolo."
+    ]
+  },
+  {
+    "id": "bolo-de-limao",
+    "nome": "Bolo de Limão",
+    "tipo": "Doce",
+    "descricao": "Confira essa deliciosa receita de Bolo de Limão, fofinha, ácida na medida certa e perfeita para o seu café da tarde!",
+    "tempopreparo": "40 min",
+    "rendimento": "12 porções",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/bolo_de_limao.jpg",
+    "ingredientes": [
+      "5 ovos (claras e gemas separadas)",
+      "1 xícara (chá) de manteiga",
+      "2 xícara (chá) de açúcar",
+      "1/2 xícara (chá) de suco de limão",
+      "1 copo de iogurte natural (200g)",
+      "2 xícaras (chá) de farinha de trigo",
+      "1 colher (sopa) de fermento em pó químico",
+      "Margarina e farinha de trigo para untar",
+      "1 colher (sopa) de raspas de casca de limão para decorar",
+      "Cobertura:",
+      "1 xícara (chá) de açúcar de confeiteiro",
+      "4 colheres (sopa) de suco de limão",
+      "4 colheres (sopa) de água"
+    ],
+    "preparo": [
+      "Na batedeira, bata as claras em neve e reserve.",
+      "Ainda na batedeira, em outra tigela, bata as gemas, a manteiga e o açúcar até ficar fofo.",
+      "Adicione o suco de limão e bata até misturar. Adicione o iogurte, a farinha peneirada, o fermento, as claras em neve e misture com uma colher. Despeje em uma forma de buraco no meio de 24 cm de diâmetro untada e enfarinhada e leve ao forno médio, preaquecido por 30 minutos até dourar.",
+      "Cobertura:",
+      "Para a cobertura, misture o açúcar de confeiteiro com o suco de limão e água. Espalhe sobre o bolo e decore com raspas de casca de limão.",
+      "Sirva."
+    ]
+  },
+  {
+    "id": "cafe-gelado",
+    "nome": "Café Gelado",
+    "tipo": "Bebida",
+    "descricao": "Confira essa deliciosa e refrescante receita de Café Gelado, perfeita para os dias mais quentes!",
+    "tempopreparo": "10 minutos",
+    "rendimento": "1 porções",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/cafe_gelado.jpg",
+    "audio": "receitas/midias/cafe_gelado.mp3",
+    "ingredientes": [
+      "150ml de leite de aveia",
+      "1 colher (chá) de mel",
+      "Gelo para encher o copo",
+      "Flor de sal a gosto",
+      "Canela a gosto",
+      "Café expresso (2 doses ou 1 longo)"
+    ],
+    "preparo": [
+      "Em um recipiente, adicione o leite e o mel. Bata com um mini mixer ou fuê até misturar bem e formar uma espuma cremosa.",
+      "Em um copo grande, coloque bastante gelo. Acrescente o leite aos poucos, intercalando com uma pitada de flor de sal e canela.",
+      "Adicione o café expresso e finalize com mais uma pitada de flor de sal e canela."
+    ]
+  },
+  {
+    "id": "chester-natalino",
+    "nome": "Chester Natalino",
+    "tipo": "Salgado",
+    "descricao": "Confira essa maravilhosa receita de Chester natalino, perfeita para enfeitar e saborear nas festas de fim de ano com a família!",
+    "tempopreparo": "2h20 + 4h",
+    "rendimento": "10 porções",
+    "dificuldade": "Médio",
+    "imagem": "receitas/midias/chester_natalino.jpg",
+    "ingredientes": [
+      "Chester:",
+      "Suco de 2 limões",
+      "3 colheres (sopa) de cheiro-verde picado",
+      "2 colheres (sopa) de coentro picado",
+      "4 colheres (sopa) de azeite",
+      "2 folhas de louro",
+      "2 dentes de alho amassados",
+      "1 pimenta dedo-de-moça sem sementes picada",
+      "Sal a gosto",
+      "1 chester (com aproximadamente 2,5kg)",
+      "Farofa:",
+      "100g de bacon em cubos",
+      "4 colheres (sopa) de manteiga",
+      "1 cebola picada",
+      "2 bananas nanicas em rodelas",
+      "2 xícaras (chá) de farinha de mandioca",
+      "1/2 xícara (chá) de uva-passa branca sem sementes",
+      "Sal, pimenta-do-reino e salsa picada a gosto",
+      "Couve:",
+      "2 colheres (sopa) de azeite",
+      "2 colheres (sopa) de manteiga",
+      "4 dentes de alho fatiados",
+      "2 maços de couve fatiados",
+      "Sal a gosto"
+    ],
+    "preparo": [
+      "Chester:",
+      "Em uma tigela, misture o suco de limão, as ervas, o azeite, o louro, o alho, a pimenta e sal. Coloque o chester, cubra e deixe descansar na geladeira por 4 horas, virando na metade do tempo.",
+      "Retire da marinada e coloque em uma fôrma. Cubra com papel-alumínio e leve ao forno médio (180ºC), preaquecido, por 1 hora.",
+      "Retire o papel e asse por mais 40 minutos ou até dourar.",
+      "Farofa:",
+      "Em uma panela, em fogo médio, frite o bacon na própria gordura, mexendo até dourar.",
+      "Adicione a manteiga e refogue a cebola por 2 minutos.",
+      "Junte a banana, a farinha, a uva-passa, sal, pimenta, salsa, misture e desligue o fogo. Reserve.",
+      "Couve e Montagem:",
+      "Derreta o azeite e a manteiga em uma panela grande, em fogo médio, e frite o alho até dourar. Acrescente a couve, tempere com sal e refogue em fogo alto por 2 minutos.",
+      "Coloque em uma travessa com a farofa, o chester e sirva."
+    ]
+  },
+  {
+    "id": "cupim-assado-no-forno",
+    "nome": "Cupim assado no forno",
+    "tipo": "Salgado",
+    "descricao": "A carne cupim é um tipo de corte de carne bovina muito saboroso por conta da sua gordura, que deixa a carne muito macia também. Confira essa receita incrível para fazer em casa!",
+    "tempopreparo": "40 minutos",
+    "rendimento": "30 unidades",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/cupim_assado.webp",
+    "ingredientes": [
+      "1 quilograma de cupim bovino",
+      "5 dentes de alho amassado",
+      "2 folhas de louro",
+      "1 xícara de vinho branco seco",
+      "1/2 xícara de shoyu ou molho inglês",
+      "2 colheres de sopa de azeite",
+      "2 colheres de sopa de tomilho",
+      "1 colher de chá de pimenta calabresa (opcional)",
+      "Pimenta do reino a gosto",
+      "Sal grosso a gosto"
+    ],
+    "preparo": [
+      "Comece por misturar os ingredientes para marinar o cupim: o vinho, o shoyu, os alhos, as folhas de louro, o tomilho, a pimenta calabresa e a pimenta do reino (deixe o sal para temperar apenas no instante antes de assar).",
+      "Coloque o cupim numa assadeira, despeje sobre ele a mistura anterior e envolva bem a carne nesse tempero. Cubra com plástico filme e reserve o cupim na geladeira durante 8 a 12 horas, virando a carne por 3 a 4 vezes (se não puder, deixe por pelo menos 2 horas).",
+      "Depois do tempo indicado, ligue o forno nos 200ºC. Tempere todo o cupim com sal grosso a gosto, cubra com papel alumínio e coloque assando por 2 a 3 horas junto com a marinada na assadeira.",
+      "Ao fim desse tempo, retire o papel alumínio e deixe a carne no forno por mais 30 minutos, para dourar.",
+      "Retire seu cupim assado do forno e deixe descansar por 10 minutos antes de cortar, assim os sucos da carne assentam e ela fica mais suculenta."
+    ]
+  },
+  {
+    "id": "lasanha-de-carne-moida",
+    "nome": "Lasanha de carne moída",
+    "tipo": "Salgado",
+    "descricao": "A lasanha de carne moída é um prato clássico, suculento e irresistível, perfeito para reunir a família no almoço de domingo!",
+    "tempopreparo": "50min",
+    "rendimento": "12 porções",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/lasanha_carne.png",
+    "ingredientes": [
+      "500 g de massa de lasanha",
+      "500 g de carne moída",
+      "2 caixas de molho de tomate",
+      "1 cebola picada",
+      "2 dentes de alho picados",
+      "3 colheres (sopa) de óleo",
+      "Sal e pimenta-do-reino a gosto",
+      "Cheiro-verde picado a gosto",
+      "300 g de queijo mussarela fatiado",
+      "300 g de presunto fatiado",
+      "Queijo parmesão ralado a gosto"
+    ],
+    "preparo": [
+      "Cozinhe a massa da lasanha segundo as instruções da embalagem, escorra e reserve.",
+      "Em uma panela, aqueça o óleo e doure a cebola e o alho.",
+      "Acrescente a carne moída e refogue até secar e dourar levemente.",
+      "Adicione o molho de tomate, tempere com sal, pimenta-do-reino e cheiro-verde, deixando apurar por alguns minutos.",
+      "Em um refratário, faça camadas alternadas de molho com carne, massa de lasanha, presunto e mussarela.",
+      "Repita as camadas até preencher a travessa, finalizando com a mussarela e o queijo parmesão ralado por cima.",
+      "Leve ao forno preaquecido a 180°C por cerca de 20 minutos ou até que o queijo esteja derretido e dourado. Sirva em seguida."
+    ]
+  },
+  {
+    "id": "milk-shake-de-chocolate",
+    "nome": "Milk shake de chocolate",
+    "tipo": "Bebida",
+    "descricao": "Um milk shake é uma receita perfeita para aqueles dias de calor! Veja como preparar essa delícia e tenha uma nova receita favorita!",
+    "tempopreparo": "15 min",
+    "rendimento": "2 pessoas",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/milkshake_chocolate.jpg",
+    "ingredientes": [
+      "3 bolas de sorvete de chocolate",
+      "2 e 1/2 xícaras de leite gelado",
+      "1 colher (chá) de essência de baunilha",
+      "Cobertura de chocolate ou outro sabor"
+    ],
+    "preparo": [
+      "Bata todos os ingredientes, menos a cobertura, no liquidificador.",
+      "Espalhe um pouco de cobertura em uma taça própria para milk shake.",
+      "Coloque o milk shake na taça e sirva-se."
+    ]
+  },
+  {
+    "id": "pave-de-chocolate",
+    "nome": "Pavê de chocolate",
+    "tipo": "Doce",
+    "descricao": "É pavê e pacumê! Essa receita de pavê de chocolate simples é um absurdo de gostosa! Um clássico nas festas de fim de ano e nas confraternizações em família, uma sobremesa que conquista paladares com sua combinação perfeita de cremosidade e sabor intenso de chocolate.",
+    "tempopreparo": "2h20 + 4h",
+    "rendimento": "10 porções",
+    "dificuldade": "Médio",
+    "imagem": "receitas/midias/pave_chocolate.jpg",
+    "ingredientes": [
+      "1 pacote de bolacha maisena",
+      "1/2 copo de leite",
+      "1 colher (sobremesa) de chocolate em pó",
+      "Creme branco:",
+      "1 lata de leite condensado",
+      "1 lata de leite de vaca (use a medida da lata de leite condensado)",
+      "1 colher (sobremesa) de amido de milho",
+      "2 gemas",
+      "Creme de chocolate:",
+      "1 lata de leite condensado",
+      "1 lata de leite de vaca (a medida da lata de leite condensado)",
+      "1 colher (sobremesa) de amido de milho",
+      "2 gemas",
+      "4 colheres de chocolate em pó",
+      "Cobertura:",
+      "4 claras",
+      "4 colheres de açúcar",
+      "1 lata de creme de leite sem soro"
+    ],
+    "preparo": [
+      "Em uma tigela, misture o leite e o chocolate em pó até que esteja completamente dissolvido.",
+      "Molhe as bolachas no leite e reserve.",
+      "Creme branco:",
+      "Em uma panela, leve todos os ingredientes ao fogo médio e misture até obter uma consistência grossa e cremosa.",
+      "Creme de chocolate:",
+      "Repita o processo feito no creme branco.",
+      "Cobertura:",
+      "Bata as claras em neve com o açúcar até obter um creme consistente, adicione o creme de leite e misture delicadamente.",
+      "Montagem:",
+      "Em um refratário grande, despeje o creme branco, metade das bolachas, creme de chocolate, bolachas e claras em neve.",
+      "Repita o processo até preencher todo o refratário e leve à geladeira por 40 minutos."
+    ]
+  },
+  {
+    "id": "pudim-de-chocolate",
+    "nome": "Pudim de Chocolate",
+    "tipo": "Doce",
+    "descricao": "A receita de Pudim de Chocolate é a escolha ideal para quem ama sobremesas clássicas e cremosas. Feito com leite condensado e chocolate em pó, esse pudim conquista pelo equilíbrio entre a textura aveludada e o gostinho intenso de chocolate.",
+    "tempopreparo": "460 min",
+    "rendimento": "10 porções",
+    "dificuldade": "Médio",
+    "imagem": "receitas/midias/pudim_de_chocolate.webp",
+    "ingredientes": [
+      "Calda:",
+      "1 xícara (chá) de açúcar",
+      "meia xícara (chá) de água quente",
+      "Pudim:",
+      "1 lata de leite condensado (395 g)",
+      "1 xícara (chá) de chocolate em pó",
+      "2 medidas de leite líquido integral (790 ml)",
+      "3 ovos"
+    ],
+    "preparo": [
+      "Calda:",
+      "Em uma panela derreta o açúcar até ficar dourado.",
+      "Junte a água quente, mexa com uma colher e deixe ferver até dissolver os torrões de açúcar e a calda engrossar.",
+      "Forre com a calda uma forma com furo central (19 cm de diâmetro) e reserve.",
+      "Pudim:",
+      "Em um liquidificador, bata o leite condensado, o chocolate em pó, o leite e os ovos até que fique homogêneo. Despeje na forma reservada.",
+      "Cubra com papel-alumínio e asse em forno médio (180°C), em banho-maria com água quente, por cerca de 1 hora e 30 minutos. Espalhe esfriar e leve para gelar por cerca de 6 horas.",
+      "Desenforme e sirva a seguir."
+    ]
+  },
+  {
+    "id": "smoothie-de-banana-e-chocolate",
+    "nome": "Smoothie de banana e chocolate",
+    "tipo": "Bebida",
+    "descricao": "A combinação de banana e chocolate é uma das mais apreciadas em todo o mundo, razão mais que suficiente para experimentar este smoothie! Esta batida gelada é perfeita para um café da manhã guloso ou lanche da tarde, além de ser econômica e rápida de preparar.",
+    "tempopreparo": "15 min",
+    "rendimento": "2 pessoas",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/smoothie_banana_chocolate.webp",
+    "ingredientes": [
+      "2 unidades de banana em rodelas congelada",
+      "2 colheres de chá de achocolatado",
+      "1 1/2 copos de leite",
+      "chantilly em spray",
+      "mel (opcional)"
+    ],
+    "preparo": [
+      "O primeiro passo para preparar este smoothie gelado é reunir os ingredientes. Certifique-se de que todos os ingredientes estejam frescos e prontos para uso, pois isso garantirá o melhor sabor possível ao seu smoothie. (Se usar banana à temperatura ambiente, acrescente cubos de gelo ao seu smoothie).",
+      "Bata no liquidificador ou com um mixer a banana e le leite. Caso prefira uma textura mais cremosa, utilize bananas congeladas, o que também ajuda a manter a bebida gelada por mais tempo sem a necessidade de adicionar gelo.",
+      "Acrescente o achocolatado e, se quiser, o mel para adoçar. Se desejar um toque extra de sabor, considere adicionar uma pitada de canela ou uma pequena quantidade de extrato de baunilha.",
+      "Após o passo anterior, o smoothie de banana e chocolate está pronto! Sirva decorado com chantilly em spray e, se quiser, adicione algumas raspas de chocolate por cima para uma apresentação ainda mais atraente. Bom apetite!"
+    ]
+  },
+  {
+    "id": "strogonoff-de-frango",
+    "nome": "Strogonoff de frango",
+    "tipo": "Salgado",
+    "descricao": "O strogonoff de frango é uma das receitas mais queridas e tradicionais para o almoço ou jantar. Muito cremosa e fácil de fazer, ela conquista a todos!",
+    "tempopreparo": "20min",
+    "rendimento": "6 porções",
+    "dificuldade": "Fácil",
+    "imagem": "receitas/midias/strogonoff_frango.jpg",
+    "ingredientes": [
+      "3 peitos de frango cortados em cubos pequenos",
+      "1 dente de alho picado",
+      "sal e pimenta-do-reino a gosto",
+      "1 cebola picada",
+      "2 colheres (sopa) de maionese",
+      "1 lata de molho de tomate",
+      "1 lata de creme de leite",
+      "ketchup a gosto",
+      "champignon a gosto",
+      "batata palha a gosto"
+    ],
+    "preparo": [
+      "Em uma panela, misture o frango, o alho, a maionese, o sal e a pimenta-do-reino.",
+      "Em uma frigideira grande, doure a cebola e adicione o tempero de frango preparado.",
+      "Deixe cozinhar até que o frango doure por completo.",
+      "Acrescente o molho de tomate, o ketchup e o champignon, mexendo bem e deixando apurar por alguns minutos.",
+      "Desligue o fogo, acrescente o creme de leite sem soro e misture delicadamente.",
+      "Sirva acompanhado de arroz branco e batata palha."
+    ]
+  }
+]
