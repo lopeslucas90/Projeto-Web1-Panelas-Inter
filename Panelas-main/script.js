@@ -1,4 +1,6 @@
-// Funções para ler e salvar a lista de usuários em JSON no localStorage
+// ==========================================
+// MÓDULO DE USUÁRIOS (LOCALSTORAGE)
+// ==========================================
 function obterUsuarios() {
     const dadosJson = localStorage.getItem("usuarios");
     if (!dadosJson) {
@@ -11,7 +13,7 @@ function salvarUsuarios(listaUsuarios) {
     localStorage.setItem("usuarios", JSON.stringify(listaUsuarios));
 }
 
-// tela de cadastro
+// Tela de Cadastro
 const formCadastro = document.getElementById("form-cadastro");
 
 if (formCadastro) {
@@ -34,7 +36,6 @@ if (formCadastro) {
 
         const listaUsuarios = obterUsuarios();
 
-        // Verifica se já existe o usuário ou e-mail cadastrado
         const jaExiste = listaUsuarios.some(
             (u) => u.usuario === usuario || u.email === email
         );
@@ -57,14 +58,13 @@ if (formCadastro) {
         listaUsuarios.push(novoUsuario);
         salvarUsuarios(listaUsuarios);
 
-        // Salva o usuário logado em JSON e vai direto para o perfil
         localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
         alert("Cadastro realizado!");
         window.location.href = "perfil.html";
     });
 }
 
-// função da tela de login
+// Tela de Login
 const formLogin = document.getElementById("form-login");
 
 if (formLogin) {
@@ -92,13 +92,12 @@ if (formLogin) {
     });
 }
 
-// tela de perfil
+// Tela de Perfil
 const formPerfil = document.getElementById("form-perfil");
 
 if (formPerfil) {
     const usuarioLogadoJson = localStorage.getItem("usuarioLogado");
 
-    // Preenche os campos da tela com os dados do JSON do usuário logado
     if (usuarioLogadoJson) {
         const usuarioLogado = JSON.parse(usuarioLogadoJson);
 
@@ -116,7 +115,6 @@ if (formPerfil) {
         }
     }
 
-    // Salva as alterações do perfil no JSON
     formPerfil.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -153,3 +151,207 @@ if (formPerfil) {
         alert("Perfil atualizado com sucesso!");
     });
 }
+
+// ==========================================
+// CARREGAMENTO DINÂMICO DA RECEITA (RECEITAS.JSON)
+// ==========================================
+const pagReceita = document.querySelector(".pag_receitas");
+
+if (pagReceita) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idReceita = urlParams.get("id");
+
+    if (idReceita) {
+        fetch("receitas/receitas.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar o arquivo de receitas.");
+                }
+                return response.json();
+            })
+            .then((receitas) => {
+                const receita = receitas.find((r) => r.id === idReceita);
+
+                if (receita) {
+                    document.getElementById("receita-nome").textContent = receita.nome;
+                    document.getElementById("receita-descricao").textContent = receita.descricao;
+                    document.getElementById("receita-imagem").src = receita.imagem;
+                    document.getElementById("receita-tempo").textContent = `Tempo de Preparo: ${receita.tempopreparo}`;
+                    document.getElementById("receita-rendimento").textContent = `Rendimento: ${receita.rendimento}`;
+                    document.getElementById("receita-dificuldade").textContent = `Dificuldade: ${receita.dificuldade}`;
+
+                    const ulIngredientes = document.getElementById("receita-ingredientes");
+                    if (ulIngredientes) {
+                        ulIngredientes.innerHTML = "";
+                        receita.ingredientes.forEach((item) => {
+                            if (item.endsWith(":")) {
+                                const h3 = document.createElement("h3");
+                                h3.textContent = item;
+                                ulIngredientes.appendChild(h3);
+                            } else {
+                                const li = document.createElement("li");
+                                li.textContent = item;
+                                ulIngredientes.appendChild(li);
+                            }
+                        });
+                    }
+
+                    const olPreparo = document.getElementById("receita-preparo");
+                    if (olPreparo) {
+                        olPreparo.innerHTML = "";
+                        receita.preparo.forEach((passo) => {
+                            if (passo.endsWith(":")) {
+                                const h3 = document.createElement("h3");
+                                h3.textContent = passo;
+                                olPreparo.appendChild(h3);
+                            } else {
+                                const li = document.createElement("li");
+                                li.textContent = passo;
+                                olPreparo.appendChild(li);
+                            }
+                        });
+                    }
+
+                    const audioElem = document.getElementById("receita-audio");
+                    const audioSource = document.getElementById("receita-audio-src");
+                    if (receita.audio) {
+                        audioSource.src = receita.audio;
+                        audioElem.load();
+                        audioElem.style.display = "block";
+                    } else {
+                        audioElem.style.display = "none";
+                    }
+
+                    const videoElem = document.getElementById("receita-video");
+                    if (videoElem) {
+                        if (receita.video) {
+                            videoElem.src = receita.video; // Se o elemento for um <iframe>
+                            videoElem.style.display = "block";
+                        } else {
+                            videoElem.style.display = "none";
+                        }
+                    }
+
+                } else {
+                    alert("Receita não encontrada!");
+                }
+            })
+            .catch((error) => {
+                console.error("Erro:", error);
+            });
+    }
+}
+
+
+// ==========================================
+// MÓDULO DE CADASTRO DE NOVAS RECEITAS
+// ==========================================
+
+function adicionarCampoIngrediente() {
+    const container = document.getElementById("container-ingredientes");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "ingrediente-item";
+    input.placeholder = "Outro ingrediente...";
+    input.required = true;
+    
+    container.appendChild(input);
+    container.appendChild(document.createElement("br"));
+}
+
+function adicionarCampoPasso() {
+    const container = document.getElementById("container-passos");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "passo-item";
+    input.placeholder = "Próximo passo...";
+    input.required = true;
+    
+    container.appendChild(input);
+    container.appendChild(document.createElement("br"));
+}
+
+function lerArquivoComoBase64(file) {
+    return new Promise((resolve, reject) => {
+        if (!file) {
+            resolve(null);
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+    });
+}
+
+async function salvarNovaReceita(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome_nreceita").value;
+    const tipoElement = document.querySelector('input[name="tipo_nreceita"]:checked');
+    const tipo = tipoElement ? tipoElement.value : "Salgado";
+    const descricao = document.getElementById("descricao_nreceita").value;
+    const tempopreparo = document.getElementById("tempo_nreceita").value;
+    const rendimento = document.getElementById("rendimento_nreceita").value;
+    const dificuldadeElement = document.querySelector('input[name="dificuldade_nreceita"]:checked');
+    const dificuldade = dificuldadeElement ? dificuldadeElement.value : "Fácil";
+
+    // Captura os arquivos dos inputs
+    const fotoFile = document.getElementById("foto_nreceita").files[0];
+    const videoFile = document.getElementById("video_nreceita").files[0];
+    const audioFile = document.getElementById("audio_nreceita").files[0];
+
+    // Converte os arquivos para Base64
+    const imagem = await lerArquivoComoBase64(fotoFile);
+    const video = await lerArquivoComoBase64(videoFile);
+    const audio = await lerArquivoComoBase64(audioFile);
+
+    // Coleta ingredientes em array
+    const ingredientes = [];
+    document.querySelectorAll(".ingrediente-item").forEach(input => {
+        if (input.value.trim() !== "") ingredientes.push(input.value.trim());
+    });
+
+    // Coleta passos em array
+    const preparo = [];
+    document.querySelectorAll(".passo-item").forEach(input => {
+        if (input.value.trim() !== "") preparo.push(input.value.trim());
+    });
+
+    // Geração de ID simples (transforma em minúsculo e troca espaços por hífen)
+    const id = nome.toLowerCase().replaceAll(" ", "-");
+
+    const novaReceita = {
+        id,
+        nome,
+        tipo,
+        descricao,
+        tempopreparo,
+        rendimento,
+        dificuldade,
+        imagem,
+        video: video || undefined,
+        audio: audio || undefined,
+        ingredientes,
+        preparo
+    };
+
+    // Salva no localStorage
+    let receitasSalvas = JSON.parse(localStorage.getItem("minhas_receitas")) || [];
+    receitasSalvas.push(novaReceita);
+    localStorage.setItem("minhas_receitas", JSON.stringify(receitasSalvas));
+
+    alert("Obrigado! Em breve, analisaremos e postaremos a sua receita!");
+    window.location.href = `receita.html?id=${id}`;
+}
+
+// Vincula os eventos ao carregar a página
+document.addEventListener("DOMContentLoaded", function() {
+    const btnAddIngrediente = document.getElementById("btn-add-ingrediente");
+    const btnAddPasso = document.getElementById("btn-add-passo");
+    const formCadastro = document.getElementById("form-nova-receita");
+
+    if (btnAddIngrediente) btnAddIngrediente.addEventListener("click", adicionarCampoIngrediente);
+    if (btnAddPasso) btnAddPasso.addEventListener("click", adicionarCampoPasso);
+    if (formCadastro) formCadastro.addEventListener("submit", salvarNovaReceita);
+});
