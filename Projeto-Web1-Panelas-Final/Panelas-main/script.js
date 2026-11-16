@@ -27,6 +27,9 @@ if (formCadastro) {
         const email = document.getElementById("mail_cadastro").value;
         const senha = document.getElementById("senha_cadastro").value;
         const senhaConf = document.getElementById("senhaConf_cadastro").value;
+        
+        const notificacoes = document.getElementById("notificacoes").checked;
+        const inputFoto = document.getElementById("foto_perfil");
 
         if (senha !== senhaConf) {
             alert("As senhas não coincidem!");
@@ -44,22 +47,36 @@ if (formCadastro) {
             return;
         }
 
-        const novoUsuario = {
-            nome: nome,
-            usuario: usuario,
-            dataNasc: dataNasc,
-            sexo: sexo,
-            fone: fone,
-            email: email,
-            senha: senha
-        };
+        function prosseguirCadastro(fotoBase64 = "") {
+            const novoUsuario = {
+                nome: nome,
+                usuario: usuario,
+                dataNasc: dataNasc,
+                sexo: sexo,
+                fone: fone,
+                email: email,
+                senha: senha,
+                notificacoes: notificacoes,
+                foto: fotoBase64
+            };
 
-        listaUsuarios.push(novoUsuario);
-        salvarUsuarios(listaUsuarios);
+            listaUsuarios.push(novoUsuario);
+            salvarUsuarios(listaUsuarios);
 
-        localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
-        alert("Cadastro realizado!");
-        window.location.href = "perfil.html";
+            localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
+            alert("Cadastro realizado!");
+            window.location.href = "perfil.html";
+        }
+
+        if (inputFoto && inputFoto.files && inputFoto.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                prosseguirCadastro(e.target.result);
+            };
+            reader.readAsDataURL(inputFoto.files[0]);
+        } else {
+            prosseguirCadastro("");
+        }
     });
 }
 
@@ -106,6 +123,14 @@ if (formPerfil) {
         document.getElementById("fone_alterar").value = usuarioLogado.fone;
         document.getElementById("mail_alterar").value = usuarioLogado.email;
 
+        if (document.getElementById("notificacoes_alterar")) {
+            document.getElementById("notificacoes_alterar").checked = usuarioLogado.notificacoes || false;
+        }
+
+        if (usuarioLogado.foto && document.getElementById("perfil-imagem")) {
+            document.getElementById("perfil-imagem").src = usuarioLogado.foto;
+        }
+
         const radioSexo = document.querySelector(
             'input[name="sexo_alterar"][value="' + usuarioLogado.sexo + '"]'
         );
@@ -128,31 +153,48 @@ if (formPerfil) {
             return;
         }
 
-        const dadosAtualizados = {
-            nome: document.getElementById("nome_alterar").value,
-            usuario: document.getElementById("usuario_alterar").value,
-            dataNasc: document.getElementById("data_nasc_alterar").value,
-            sexo: document.querySelector('input[name="sexo_alterar"]:checked').value,
-            fone: document.getElementById("fone_alterar").value,
-            email: document.getElementById("mail_alterar").value,
-            senha: novaSenha !== "" ? novaSenha : usuarioLogado.senha
-        };
+        const notificacoesAlterar = document.getElementById("notificacoes_alterar").checked;
+        const inputFotoAlterar = document.getElementById("foto_perfil_alterar");
 
-        const listaUsuarios = obterUsuarios();
-        const indice = listaUsuarios.findIndex((u) => u.usuario === usuarioLogado.usuario);
+        function salvarAlteracoes(fotoBase64) {
+            const dadosAtualizados = {
+                nome: document.getElementById("nome_alterar").value,
+                usuario: document.getElementById("usuario_alterar").value,
+                dataNasc: document.getElementById("data_nasc_alterar").value,
+                sexo: document.querySelector('input[name="sexo_alterar"]:checked').value,
+                fone: document.getElementById("fone_alterar").value,
+                email: document.getElementById("mail_alterar").value,
+                senha: novaSenha !== "" ? novaSenha : usuarioLogado.senha,
+                notificacoes: notificacoesAlterar,
+                foto: fotoBase64
+            };
 
-        if (indice !== -1) {
-            listaUsuarios[indice] = dadosAtualizados;
-            salvarUsuarios(listaUsuarios);
+            const listaUsuarios = obterUsuarios();
+            const indice = listaUsuarios.findIndex((u) => u.usuario === usuarioLogado.usuario);
+
+            if (indice !== -1) {
+                listaUsuarios[indice] = dadosAtualizados;
+                salvarUsuarios(listaUsuarios);
+            }
+
+            localStorage.setItem("usuarioLogado", JSON.stringify(dadosAtualizados));
+            alert("Perfil atualizado com sucesso!");
         }
 
-        localStorage.setItem("usuarioLogado", JSON.stringify(dadosAtualizados));
-        alert("Perfil atualizado com sucesso!");
+        if (inputFotoAlterar && inputFotoAlterar.files && inputFotoAlterar.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                salvarAlteracoes(e.target.result);
+            };
+            reader.readAsDataURL(inputFotoAlterar.files[0]);
+        } else {
+            salvarAlteracoes(usuarioLogado.foto || "");
+        }
     });
 }
 
 // PREENCHIMENTO DAS RECEITAS 
-const pagReceita = document.querySelector(".pag_receitas");
+const pagReceita = document.getElementById("pag_receitas_json");
 
 if (pagReceita) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -238,6 +280,83 @@ if (pagReceita) {
     }
 }
 
+//PREENCHIMENTO RECEITA INSERIDA (via LocalStorage)
+
+const pagReceitaLocal = document.getElementById("pag_receitas_local");
+
+if (pagReceitaLocal) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idReceita = urlParams.get("id");
+
+    if (idReceita) {
+        const receitasSalvas = JSON.parse(localStorage.getItem("minhas_receitas")) || [];
+        const receita = receitasSalvas.find((r) => r.id === idReceita);
+
+        if (receita) {
+            document.getElementById("receita-nome").textContent = receita.nome;
+            document.getElementById("receita-descricao").textContent = receita.descricao;
+            document.getElementById("receita-imagem").src = receita.imagem;
+            document.getElementById("receita-tempo").textContent = `Tempo de Preparo: ${receita.tempopreparo}`;
+            document.getElementById("receita-rendimento").textContent = `Rendimento: ${receita.rendimento}`;
+            document.getElementById("receita-dificuldade").textContent = `Dificuldade: ${receita.dificuldade}`;
+
+            const ulIngredientes = document.getElementById("receita-ingredientes");
+            if (ulIngredientes) {
+                ulIngredientes.innerHTML = "";
+                receita.ingredientes.forEach((item) => {
+                    if (item.endsWith(":")) {
+                        const h3 = document.createElement("h3");
+                        h3.textContent = item;
+                        ulIngredientes.appendChild(h3);
+                    } else {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        ulIngredientes.appendChild(li);
+                    }
+                });
+            }
+            const olPreparo = document.getElementById("receita-preparo");
+            if (olPreparo) {
+                olPreparo.innerHTML = "";
+                receita.preparo.forEach((passo) => {
+                    if (passo.endsWith(":")) {
+                        const h3 = document.createElement("h3");
+                        h3.textContent = passo;
+                        olPreparo.appendChild(h3);
+                    } else {
+                        const li = document.createElement("li");
+                        li.textContent = passo;
+                        olPreparo.appendChild(li);
+                    }
+                });
+            }
+
+            const audioElem = document.getElementById("receita-audio");
+            const audioSource = document.getElementById("receita-audio-src");
+            if (receita.audio) {
+                audioSource.src = receita.audio;
+                audioElem.load();
+                audioElem.style.display = "block";
+            } else {
+                audioElem.style.display = "none";
+            }
+
+            const videoElem = document.getElementById("receita-video");
+            if (videoElem) {
+                if (receita.video) {
+                    videoElem.src = receita.video;
+                    videoElem.style.display = "block";
+                } else {
+                    videoElem.style.display = "none";
+                }
+            }
+
+        } else {
+            alert("Receita não encontrada!");
+        }
+    }
+}
+
 
 // INSERÇÃO DE RECEITAS
 
@@ -246,7 +365,7 @@ function adicionarCampoIngrediente() {
     const input = document.createElement("input");
     input.type = "text";
     input.className = "ingrediente-item";
-    input.placeholder = "Outro ingrediente...";
+    input.placeholder = "Próximo ingrediente";
     input.required = true;
     
     container.appendChild(input);
@@ -258,7 +377,7 @@ function adicionarCampoPasso() {
     const input = document.createElement("input");
     input.type = "text";
     input.className = "passo-item";
-    input.placeholder = "Próximo passo...";
+    input.placeholder = "Próximo passo";
     input.required = true;
     
     container.appendChild(input);
@@ -330,7 +449,7 @@ async function salvarNovaReceita(event) {
     localStorage.setItem("minhas_receitas", JSON.stringify(receitasSalvas));
 
     alert("Obrigado! Em breve, analisaremos e postaremos a sua receita!");
-    window.location.href = `receita.html?id=${id}`;
+    window.location.href = `receita_inserida.html?id=${id}`;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
