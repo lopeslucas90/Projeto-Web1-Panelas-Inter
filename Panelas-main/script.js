@@ -1,6 +1,5 @@
-// ==========================================
-// MÓDULO DE USUÁRIOS (LOCALSTORAGE)
-// ==========================================
+// FUNÇÕES CADASTRO/PERFIL
+
 function obterUsuarios() {
     const dadosJson = localStorage.getItem("usuarios");
     if (!dadosJson) {
@@ -152,9 +151,7 @@ if (formPerfil) {
     });
 }
 
-// ==========================================
-// CARREGAMENTO DINÂMICO DA RECEITA (RECEITAS.JSON)
-// ==========================================
+// PREENCHIMENTO DAS RECEITAS 
 const pagReceita = document.querySelector(".pag_receitas");
 
 if (pagReceita) {
@@ -195,7 +192,6 @@ if (pagReceita) {
                             }
                         });
                     }
-
                     const olPreparo = document.getElementById("receita-preparo");
                     if (olPreparo) {
                         olPreparo.innerHTML = "";
@@ -243,9 +239,7 @@ if (pagReceita) {
 }
 
 
-// ==========================================
-// MÓDULO DE CADASTRO DE NOVAS RECEITAS
-// ==========================================
+// INSERÇÃO DE RECEITAS
 
 function adicionarCampoIngrediente() {
     const container = document.getElementById("container-ingredientes");
@@ -296,29 +290,24 @@ async function salvarNovaReceita(event) {
     const dificuldadeElement = document.querySelector('input[name="dificuldade_nreceita"]:checked');
     const dificuldade = dificuldadeElement ? dificuldadeElement.value : "Fácil";
 
-    // Captura os arquivos dos inputs
     const fotoFile = document.getElementById("foto_nreceita").files[0];
     const videoFile = document.getElementById("video_nreceita").files[0];
     const audioFile = document.getElementById("audio_nreceita").files[0];
 
-    // Converte os arquivos para Base64
     const imagem = await lerArquivoComoBase64(fotoFile);
     const video = await lerArquivoComoBase64(videoFile);
     const audio = await lerArquivoComoBase64(audioFile);
 
-    // Coleta ingredientes em array
     const ingredientes = [];
     document.querySelectorAll(".ingrediente-item").forEach(input => {
         if (input.value.trim() !== "") ingredientes.push(input.value.trim());
     });
 
-    // Coleta passos em array
     const preparo = [];
     document.querySelectorAll(".passo-item").forEach(input => {
         if (input.value.trim() !== "") preparo.push(input.value.trim());
     });
 
-    // Geração de ID simples (transforma em minúsculo e troca espaços por hífen)
     const id = nome.toLowerCase().replaceAll(" ", "-");
 
     const novaReceita = {
@@ -336,7 +325,6 @@ async function salvarNovaReceita(event) {
         preparo
     };
 
-    // Salva no localStorage
     let receitasSalvas = JSON.parse(localStorage.getItem("minhas_receitas")) || [];
     receitasSalvas.push(novaReceita);
     localStorage.setItem("minhas_receitas", JSON.stringify(receitasSalvas));
@@ -345,7 +333,6 @@ async function salvarNovaReceita(event) {
     window.location.href = `receita.html?id=${id}`;
 }
 
-// Vincula os eventos ao carregar a página
 document.addEventListener("DOMContentLoaded", function() {
     const btnAddIngrediente = document.getElementById("btn-add-ingrediente");
     const btnAddPasso = document.getElementById("btn-add-passo");
