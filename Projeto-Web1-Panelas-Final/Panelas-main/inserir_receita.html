@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nova Receita - panelinhas.com</title>
+</head>
+<body>
+    <header class="cabecalho">
+            <div id="caixa-busca">
+                <input type="text" id="busca-texto" placeholder="pesquisar receita...">
+                <img src="icones/icone-busca.png" id="botao-busca" alt="icone-busca">
+            </div>
+            <nav>
+                <li class="logo-site"><img src="icones/logo_Panelas.png" alt="Logo Panelinhas" width="300" height="200"></li>
+                <li><a href="#">Receitas...</a></li>
+            </nav>
+        </header>
+    <hr id="listra_cabecalho">
+    <main>
+        <form id="form-nova-receita">
+            <fieldset>
+                <legend>Principal</legend>
+                <label for="nome_nreceita">Nome da Receita:</label>
+                <input type="text" id="nome_nreceita" name="nome_nreceita" required><br>
+
+                <label for="descricao_nreceita">Descrição:</label>
+                <textarea id="descricao_nreceita" name="descricao_nreceita" rows="4" cols="30" maxlength="150" required></textarea><br>
+
+                <label for="foto_nreceita">Envie uma foto:</label>
+                <input type="file" id="foto_nreceita" name="foto_nreceita" accept="image/*" required><br>
+
+                <label for="video_nreceita">Envie um vídeo:</label>
+                <input type="file" id="video_nreceita" name="video_nreceita" accept="video/*"><br>
+
+                <label for="audio_nreceita">Envie um áudio:</label>
+                <input type="file" id="audio_nreceita" name="audio_nreceita" accept="audio/*"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes</legend>
+                <label for="tempo_nreceita">Tempo de preparo:</label>
+                <input type="text" id="tempo_nreceita" name="tempo_nreceita" placeholder="Ex: 40 min"><br>
+                
+                <label for="rendimento_nreceita">Rendimento:</label>
+                <input type="text" id="rendimento_nreceita" name="rendimento_nreceita" required><br>
+                
+                <label>Classificação:</label>
+                <input type="radio" id="tipo_salgado" name="tipo_nreceita" value="Salgado" checked>
+                <label for="tipo_salgado">Salgado</label>
+                <input type="radio" id="tipo_doce" name="tipo_nreceita" value="Doce">
+                <label for="tipo_doce">Doce</label>
+                <input type="radio" id="tipo_bebida" name="tipo_nreceita" value="Bebida">
+                <label for="tipo_bebida">Bebida</label><br>
+                
+                <label>Dificuldade:</label>
+                <input type="radio" id="facil" name="dificuldade_nreceita" value="Fácil" checked>
+                <label for="facil">Fácil</label>
+                <input type="radio" id="medio" name="dificuldade_nreceita" value="Médio">
+                <label for="medio">Médio</label>
+                <input type="radio" id="dificil" name="dificuldade_nreceita" value="Difícil">
+                <label for="dificil">Difícil</label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preparo</legend>
+                
+                <label>Ingredientes:</label>
+                <div id="container-ingredientes">
+                    <input type="text" class="ingrediente-item" placeholder="Ex: 2 xícaras de farinha" required><br>
+                </div>
+                <button type="button" id="btn-add-ingrediente">Inserir mais um ingrediente</button><br><br>
+
+                <label>Passo a Passo:</label>
+                <div id="container-passos">
+                    <input type="text" class="passo-item" placeholder="Ex: Misture tudo em uma tigela..." required><br>
+                </div>
+                <button type="button" id="btn-add-passo">Inserir mais um passo</button><br>
+            </fieldset>
+
+            <input type="submit" value="Enviar receita">
+        </form>
+    </main>
+    <footer>
+        <p>Desenvolvido por...</p>
+        <aside>
+            <p>Siga as nossas redes sociais</p>
+            <nav>
+                <a href=""><img src="icones/facebook-icone.png" alt="facebook" width="50"></a>
+                <a href=""><img src="icones/instagram-icone.webp" alt="instagram-icone" width="50"></a>
+            </nav>
+        </aside>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
