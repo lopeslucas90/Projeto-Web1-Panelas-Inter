@@ -16,6 +16,11 @@ body {
     line-height: 1.5;
 }
 
+body::selection{
+    background-color: crimson;
+    color: white;
+}
+
 
 /* Limita a largura do conteúdo principal e o centraliza; flex: 1 ajuda a empurrar o rodapé para baixo. */
 main {
