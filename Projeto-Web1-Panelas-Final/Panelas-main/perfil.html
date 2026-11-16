@@ -25,9 +25,15 @@
         </a>
         <br>
         <h2>Visualizar/alterar seu Perfil:</h2>
-        <!--Parte de visualização vai precisar do JS-->
         <form id="form-perfil" action="" method="post">
             <fieldset> 
+
+                <label>Foto de Perfil:</label><br>
+                <img id="perfil-imagem" src="" alt="Foto de perfil" width="150" height="150"><br><br>
+
+                <label for="foto_perfil_alterar">Alterar foto de perfil:</label>
+                <input type="file" id="foto_perfil_alterar" name="foto_perfil_alterar" accept="image/*"><br><br>
+                
                 <label for="nome_alterar">Alterar Nome</label>
                 <input type="text" id="nome_alterar" name="nome_alterar"><br>
 
@@ -55,7 +61,10 @@
                 <input type="password" id="senha_alterar" name="senha_alterar"><br>
         
                 <label for="senhaConf_alterar">Confirme sua nova senha:</label>
-                <input type="password" id="senhaConf_alterar" name="senhaConf_alterar"><br>            
+                <input type="password" id="senhaConf_alterar" name="senhaConf_alterar"><br>   
+                
+                <input type="checkbox" id="notificacoes_alterar" name="notificacoes_alterar">
+                <label for="notificacoes_alterar">Desejo receber notificações e recomendações de receitas</label><br><br>
 
                 <input type="submit" value="Salvar alterações">
             </fieldset>
