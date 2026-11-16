@@ -1,0 +1,44 @@
+[
+  {
+    "ingrediente": "Cenoura média ralada",
+    "meia": "1 e 1/2 unidade (135 g)",
+    "original": "3 unidades (270 g)",
+    "vezemeia": "4 e 1/2 unidades (405 g)",
+    "dobrada": "6 unidades (540 g)"
+  },
+  {
+    "ingrediente": "Ovos inteiros",
+    "meia": "2 unidades",
+    "original": "4 unidades",
+    "vezemeia": "6 unidades",
+    "dobrada": "8 unidades"
+  },
+  {
+    "ingrediente": "Óleo de soja ou milho",
+    "meia": "1/2 xícara (120 ml)",
+    "original": "1 xícara (240 ml)",
+    "vezemeia": "1 e 1/2 xícara (360 ml)",
+    "dobrada": "2 xícaras (480 ml)"
+  },
+  {
+    "ingrediente": "Açúcar refinado",
+    "meia": "1 xícara (180 g)",
+    "original": "2 xícaras (360 g)",
+    "vezemeia": "3 xícaras (540 g)",
+    "dobrada": "4 xícaras (720 g)"
+  },
+  {
+    "ingrediente": "Farinha de trigo",
+    "meia": "1 e 1/4 xícara (150 g)",
+    "original": "2 e 1/2 xícaras (300 g)",
+    "vezemeia": "3 e 3/4 xícaras (450 g)",
+    "dobrada": "5 xícaras (600 g)"
+  },
+  {
+    "ingrediente": "Fermento químico em pó",
+    "meia": "1/2 colher de sopa (7 g)",
+    "original": "1 colher de sopa (14 g)",
+    "vezemeia": "1 e 1/2 colher de sopa (21 g)",
+    "dobrada": "2 colheres de sopa (28 g)"
+  }
+]
