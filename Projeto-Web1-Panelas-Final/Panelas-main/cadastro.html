@@ -30,11 +30,6 @@
                 <label for="usuario_cadastro">Nome de Usuário:</label>
                 <input type="text" id="usuario_cadastro" name="usuario_cadastro" required><br>
                 
-                <!-- Idade e Data de nascimento não ficaria repetitivo ?
-                <label for="idade_cadastro">Idade</label>
-                <input type="range" id="idade_cadastro" name="idade_cadastro" min="18" max="120" value="18" oninput="saida.value = this.value + ' Ano(s)'" required>
-                <output id="saida" for="idade_cadastro">18 Ano(s)</output><br>
-                -->
 
                 <label for="data_nasc_cadastro">Data de Nascimento</label>
                 <input type="date" id="data_nasc_cadastro" name="data_nasc_cadastro" required><br>
@@ -57,7 +52,13 @@
                 <input type="password" id="senha_cadastro" name="senha_cadastro" required><br>
         
                 <label for="senhaConf_cadastro">Confirme sua senha:</label>
-                <input type="password" id="senhaConf_cadastro" name="senhaConf_cadastro" required><br><br>
+                <input type="password" id="senhaConf_cadastro" name="senhaConf_cadastro" required><br>
+
+                <input type="checkbox" id="notificacoes" name="notificacoes">
+                <label for="notificacoes">Desejo receber notificações e recomendações de receitas</label><br>
+
+                <label for="foto_perfil">Foto de Perfil:</label>
+                <input type="file" id="foto_perfil" name="foto_perfil" accept="image/*" required><br><br>
                 
                 <input type="submit" value="Cadastrar">
             </fieldset>
